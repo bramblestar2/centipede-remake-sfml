@@ -5,6 +5,7 @@ Window::Window()
 	initWindow();
 
 	TextureHandler::load("grass", "grass.png");
+	AudioHandler::load("sound", "test.wav");
 }
 
 Window::~Window()
@@ -12,6 +13,7 @@ Window::~Window()
 	delete window;
 
 	TextureHandler::freeAll();
+	AudioHandler::freeAll();
 }
 
 void Window::run()
@@ -64,5 +66,5 @@ void Window::updateSFMLEvents()
 
 void Window::initWindow()
 {
-	window = new sf::RenderWindow(sf::VideoMode(100, 100), "TITLE", sf::Style::Default);
+	window = new sf::RenderWindow(sf::VideoMode(300, 200), "TITLE", sf::Style::Default);
 }

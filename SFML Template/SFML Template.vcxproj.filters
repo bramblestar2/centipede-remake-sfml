@@ -21,25 +21,31 @@
     <ClCompile Include="Window\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TextureHandler.cpp">
+    <ClCompile Include="Handlers\TextureHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Animated.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AnimationHandler.cpp">
+    <ClCompile Include="Handlers\AnimationHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DynamicHandler.cpp">
+    <ClCompile Include="Handlers\DynamicHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Dynamic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AudioHandler.cpp">
+    <ClCompile Include="Handlers\AudioHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Handler.cpp">
+    <ClCompile Include="Handlers\Handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Handlers\FontHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Handlers\GlobalColors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,31 +53,31 @@
     <ClInclude Include="Window\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TextureHandler.h">
+    <ClInclude Include="Handlers\TextureHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FontHandler.h">
+    <ClInclude Include="Handlers\FontHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GlobalColors.h">
+    <ClInclude Include="Handlers\GlobalColors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Animated.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AnimationHandler.h">
+    <ClInclude Include="Handlers\AnimationHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DynamicHandler.h">
+    <ClInclude Include="Handlers\DynamicHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dynamic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AudioHandler.h">
+    <ClInclude Include="Handlers\AudioHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Handler.h">
+    <ClInclude Include="Handlers\Handler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -18,9 +18,9 @@ std::map<T, U*> Handler<T, U>::m_loaded;
 template<typename T, typename U>
 inline U* Handler<T, U>::get(T key)
 {
-	auto find = m_loaded.find(T);
+	auto find = m_loaded.find(key);
 	if (find != m_loaded.end())
-		return m_loaded[T];
+		return m_loaded[key];
 	else
 		return nullptr;
 }
@@ -46,4 +46,6 @@ inline void Handler<T, U>::freeAll()
 		delete loaded.second;
 
 	m_loaded.clear();
+
+	std::cout << "Handler pointers have been cleared.\n";
 }
