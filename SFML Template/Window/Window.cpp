@@ -3,11 +3,15 @@
 Window::Window()
 {
 	initWindow();
+
+	TextureHandler::load("grass", "grass.png");
 }
 
 Window::~Window()
 {
 	delete window;
+
+	TextureHandler::freeAll();
 }
 
 void Window::run()

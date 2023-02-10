@@ -136,10 +136,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animated.cpp" />
+    <ClCompile Include="AnimationHandler.cpp" />
+    <ClCompile Include="AudioHandler.cpp" />
+    <ClCompile Include="Dynamic.cpp" />
+    <ClCompile Include="DynamicHandler.cpp" />
+    <ClCompile Include="Handler.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="TextureHandler.cpp" />
     <ClCompile Include="Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animated.h" />
+    <ClInclude Include="AnimationHandler.h" />
+    <ClInclude Include="AudioHandler.h" />
+    <ClInclude Include="Dynamic.h" />
+    <ClInclude Include="DynamicHandler.h" />
+    <ClInclude Include="FontHandler.h" />
+    <ClInclude Include="GlobalColors.h" />
+    <ClInclude Include="Handler.h" />
+    <ClInclude Include="TextureHandler.h" />
     <ClInclude Include="Window\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
