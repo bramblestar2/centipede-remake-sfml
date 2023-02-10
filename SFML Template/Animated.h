@@ -20,7 +20,7 @@ public:
 	int getFrameCount() const;
 
 private:
-	std::string getFrameString();
+	std::string getFramePathString();
 	void updateFrame();
 	void loadFrames(const int start, const int end);
 	void clearFrames();
