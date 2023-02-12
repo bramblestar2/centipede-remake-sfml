@@ -60,7 +60,7 @@ int Animated::getFrameCount() const
 
 std::string Animated::getFramePathString()
 {
-    std::string string_frame = m_path;
+    std::string string_frame = m_file_format;
     size_t found = string_frame.find_last_of('#');
 
     if (found != std::string::npos)
@@ -68,7 +68,7 @@ std::string Animated::getFramePathString()
     else
         string_frame = "null";
 
-    return string_frame;
+    return m_path + "\\" + string_frame;
 }
 
 void Animated::updateFrame()

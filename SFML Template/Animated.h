@@ -5,6 +5,7 @@
 class Animated
 {
 public:
+	/* path: the folder the files will be in */
 	/* filename_format: # will be replaced with numbers */
 	Animated(const std::string path, const std::string filename_format,
 			 const int start_frames, const int end_frames, const sf::Time frame_time);
