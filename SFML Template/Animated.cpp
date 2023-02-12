@@ -15,6 +15,11 @@ Animated::Animated(const std::string path, const std::string format,
 
 Animated::~Animated()
 {
+    while (m_frames.size() > 0)
+    {
+        delete m_frames.at(0);
+        m_frames.erase(m_frames.begin());
+    }
 }
 
 void Animated::update(sf::RectangleShape& sprite)
@@ -89,8 +94,8 @@ void Animated::updateFrame()
             m_frame_clock.restart();
         }
     }
-    else
-        m_frame_clock.restart();
+    //else
+    //    m_frame_clock.restart();
 }
 
 void Animated::loadFrames(const int start, const int end)
