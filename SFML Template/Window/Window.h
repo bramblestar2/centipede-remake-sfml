@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "../Handlers/TextureHandler.h"
 #include "../Handlers/AudioHandler.h"
+#include "../Animated.h"
 
 class Window
 {
@@ -23,5 +24,8 @@ private:
 
 	sf::RenderWindow* window;
 	sf::Event event;
+
+	Animated animation;
+	sf::RectangleShape shape;
 };
 

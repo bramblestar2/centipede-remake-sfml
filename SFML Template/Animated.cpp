@@ -1,17 +1,5 @@
 #include "Animated.h"
-
-Animated::Animated(const std::string path, const std::string format, 
-    const int start_frames, const int end_frames, const sf::Time time)
-{
-    m_frame_time = time;
-    m_file_format = end_frames - start_frames;
-    m_path = path;
-
-    m_current_frame = 0;
-    m_max_frames = -1;
-
-    loadFrames(start_frames, end_frames);
-}
+#include <iostream>
 
 Animated::~Animated()
 {
@@ -22,29 +10,55 @@ Animated::~Animated()
     }
 }
 
+void Animated::setup(const std::string path, const std::string filename_format, 
+    const int start_frames, const int end_frames, const sf::Time frame_time)
+{
+    m_frame_time = frame_time;
+    m_file_format = filename_format;
+    m_path = path;
+
+    m_current_frame = start_frames;
+    m_start_frame = start_frames;
+    m_end_frame = end_frames;
+    m_max_frames = end_frames - start_frames;
+
+    loadFrames(start_frames, end_frames);
+
+    m_updated = true;
+}
+
 void Animated::update(sf::RectangleShape& sprite)
 {
     if (m_updated)
     {
-        sprite.setTexture(m_frames.at(m_current_frame));
+        sprite.setTexture(m_frames.at(m_current_frame-1));
 
         m_updated = false;
     }
+
+    updateFrame();
 }
 
 void Animated::update(sf::Sprite& sprite)
 {
     if (m_updated)
     {
-        sprite.setTexture(*m_frames.at(m_current_frame));
+        sprite.setTexture(*m_frames.at(m_current_frame-1));
 
         m_updated = false;
     }
+
+    updateFrame();
 }
 
-int Animated::getFrame() const
+int Animated::getCurrentFrame() const
 {
     return m_current_frame;
+}
+
+sf::Texture* Animated::getFrame() const
+{
+    return m_frames.at(m_current_frame-1);
 }
 
 void Animated::setFrame(const int frame)
@@ -63,13 +77,13 @@ int Animated::getFrameCount() const
     return m_max_frames;
 }
 
-std::string Animated::getFramePathString()
+std::string Animated::getFramePathString(int frame)
 {
-    std::string string_frame = m_path;
+    std::string string_frame = m_file_format;
     size_t found = string_frame.find_last_of('#');
-
+    
     if (found != std::string::npos)
-        string_frame = string_frame.replace(found, 1, std::to_string(m_current_frame));
+        string_frame = m_path + string_frame.replace(found, 1, std::to_string(frame));
     else
         string_frame = "null";
 
@@ -87,7 +101,7 @@ void Animated::updateFrame()
             if (m_current_frame < m_max_frames)
                 m_current_frame++;
             else
-                m_current_frame = 0;
+                m_current_frame = m_start_frame;
 
             m_updated = true;
 
@@ -105,7 +119,9 @@ void Animated::loadFrames(const int start, const int end)
     for (int i = start; i < end; i++)
     {
         sf::Texture* frame = new sf::Texture();
-        frame->loadFromFile(getFramePathString());
+        frame->loadFromFile(getFramePathString(i));
+
+        m_frames.push_back(frame);
     }
 }
 

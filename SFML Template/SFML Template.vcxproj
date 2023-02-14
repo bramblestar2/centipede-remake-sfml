@@ -148,6 +148,7 @@
     <ClCompile Include="Handlers\Handler.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Handlers\TextureHandler.cpp" />
+    <ClCompile Include="SpriteSheetAnimation.cpp" />
     <ClCompile Include="Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +161,7 @@
     <ClInclude Include="Handlers\GlobalColors.h" />
     <ClInclude Include="Handlers\Handler.h" />
     <ClInclude Include="Handlers\TextureHandler.h" />
+    <ClInclude Include="SpriteSheetAnimation.h" />
     <ClInclude Include="Window\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

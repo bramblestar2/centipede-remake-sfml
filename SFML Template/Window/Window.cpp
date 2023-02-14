@@ -6,6 +6,9 @@ Window::Window()
 
 	TextureHandler::load("grass", "grass.png");
 	AudioHandler::load("sound", "test.wav");
+
+	animation.setup("animation/", "frame (#).png", 1, 59, sf::seconds(0.05));
+	shape.setSize(sf::Vector2f(100, 150));
 }
 
 Window::~Window()
@@ -31,11 +34,14 @@ void Window::render()
 {
 	window->clear();
 
+	window->draw(shape);
+
 	window->display();
 }
 
 void Window::update()
 {
+	animation.update(shape);
 }
 
 void Window::updateDt()
