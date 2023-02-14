@@ -87,7 +87,7 @@ std::string Animated::getFramePathString(int frame)
     else
         string_frame = "null";
 
-    return string_frame;
+    return m_path + "\\" + string_frame;
 }
 
 void Animated::updateFrame()
