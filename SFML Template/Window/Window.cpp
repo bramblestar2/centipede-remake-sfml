@@ -12,7 +12,7 @@ Window::Window()
 	AudioHandler::load("sound", "test.wav");
 
 	animation.setup("animation/", "frame (#).png", 1, 59, sf::seconds(0.05));
-	shape.setSize(sf::Vector2f(100, 150));
+	shape.setSize(sf::Vector2f(125, 150));
 
 	spriteAnimation.setup(TextureHandler::get("items"), sf::seconds(0.1), 0, 5);
 	spriteAnimation.addFrame(sf::IntRect(16 * 0, 16 * 2, 16, 16));
@@ -51,7 +51,6 @@ void Window::render()
 	window->draw(shape);
 	window->draw(tile);
 	
-
 	window->display();
 }
 

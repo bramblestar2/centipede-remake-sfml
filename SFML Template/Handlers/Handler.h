@@ -12,6 +12,11 @@ protected:
 	static std::map<T, U*> m_loaded;
 };
 
+
+/*
+*	DEFINITIONS
+*/
+
 template<typename T, typename U>
 std::map<T, U*> Handler<T, U>::m_loaded;
 
