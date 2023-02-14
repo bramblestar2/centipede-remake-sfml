@@ -1,4 +1,5 @@
 #include "SpriteSheetAnimation.h"
+#include <iostream>
 
 SpriteSheetAnimation::~SpriteSheetAnimation()
 {
@@ -9,15 +10,16 @@ SpriteSheetAnimation::~SpriteSheetAnimation()
 	}
 }
 
-void SpriteSheetAnimation::setup(sf::Texture* const sheet, sf::Time frame_time,
+void SpriteSheetAnimation::setup(sf::Texture* sheet, sf::Time frame_time,
 	const int start_frame, const int end_frame)
 {
-
+	m_frame_time = frame_time;
+	m_sprite_sheet = sheet;
 
 	setFrames(start_frame, end_frame);
 }
 
-void SpriteSheetAnimation::addFrame(sf::IntRect& frame)
+void SpriteSheetAnimation::addFrame(sf::IntRect frame)
 {
 	m_frames.push_back(new sf::IntRect(frame));
 }
@@ -41,15 +43,14 @@ void SpriteSheetAnimation::setCurrentFrame(const int frame)
 		m_current_frame = frame;
 }
 
-void SpriteSheetAnimation::loadSpriteSheet(std::string path)
+void SpriteSheetAnimation::setSpriteSheet(sf::Texture* texture)
 {
-	sf::Texture* texture = new sf::Texture();
-	if (texture->loadFromFile(path))
-	{
-		m_sprite_sheet = texture;
-	}
-	else
-		delete texture;
+	m_sprite_sheet = texture;
+}
+
+sf::Texture* SpriteSheetAnimation::getSpriteSheet() const
+{
+	return m_sprite_sheet;
 }
 
 int SpriteSheetAnimation::getCurrentFrame() const
@@ -74,6 +75,7 @@ void SpriteSheetAnimation::update(sf::RectangleShape& sprite)
 {
 	if (m_updated)
 	{
+
 		sprite.setTexture(m_sprite_sheet);
 		sprite.setTextureRect(*m_frames.at(m_current_frame));
 

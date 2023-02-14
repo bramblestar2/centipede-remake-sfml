@@ -3,6 +3,7 @@
 #include "../Handlers/TextureHandler.h"
 #include "../Handlers/AudioHandler.h"
 #include "../Animated.h"
+#include "../SpriteSheetAnimation.h"
 
 class Window
 {
@@ -27,5 +28,8 @@ private:
 
 	Animated animation;
 	sf::RectangleShape shape;
+
+	SpriteSheetAnimation spriteAnimation;
+	sf::RectangleShape tile;
 };
 

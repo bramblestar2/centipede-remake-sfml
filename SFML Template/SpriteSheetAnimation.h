@@ -7,14 +7,15 @@ class SpriteSheetAnimation
 public:
 	~SpriteSheetAnimation();
 
-	void setup(sf::Texture* const sheet, sf::Time frame_time, const int start_frame, const int end_frame);
+	void setup(sf::Texture* sheet, sf::Time frame_time, const int start_frame, const int end_frame);
 
-	void addFrame(sf::IntRect& frame);
+	void addFrame(sf::IntRect frame);
 	void setFrameTime(sf::Time frame_time);
 	void setFrames(const int start_frame, const int end_frame);
 	void setCurrentFrame(const int frame);
-	void loadSpriteSheet(std::string path);
+	void setSpriteSheet(sf::Texture* texture);
 
+	sf::Texture* getSpriteSheet() const;
 	int getCurrentFrame() const;
 
 	void update(sf::Sprite&);

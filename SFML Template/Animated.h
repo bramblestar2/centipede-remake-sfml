@@ -14,7 +14,6 @@ public:
 	void update(sf::RectangleShape& sprite);
 	void update(sf::Sprite& sprite);
 
-
 	int getCurrentFrame() const;
 	sf::Texture* getFrame() const;
 	void setFrame(const int frame);
