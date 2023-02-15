@@ -58,6 +58,28 @@ int SpriteSheetAnimation::getCurrentFrame() const
 	return m_current_frame;
 }
 
+void SpriteSheetAnimation::updateOnce(sf::Sprite& sprite)
+{
+	sprite.setTexture(*m_sprite_sheet);
+	sprite.setTextureRect(*m_frames.at(m_current_frame));
+
+	if (m_current_frame < m_end_frame)
+		m_current_frame++;
+	else
+		m_current_frame = m_start_frame;
+}
+
+void SpriteSheetAnimation::updateOnce(sf::RectangleShape& sprite)
+{
+	sprite.setTexture(m_sprite_sheet);
+	sprite.setTextureRect(*m_frames.at(m_current_frame));
+
+	if (m_current_frame < m_end_frame)
+		m_current_frame++;
+	else
+		m_current_frame = m_start_frame;
+}
+
 void SpriteSheetAnimation::update(sf::Sprite& sprite)
 {
 	if (m_updated)

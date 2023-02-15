@@ -18,8 +18,10 @@ public:
 	sf::Texture* getSpriteSheet() const;
 	int getCurrentFrame() const;
 
-	void update(sf::Sprite&);
-	void update(sf::RectangleShape&);
+	void updateOnce(sf::Sprite& sprite);
+	void updateOnce(sf::RectangleShape& sprite);
+	void update(sf::Sprite& sprite);
+	void update(sf::RectangleShape& sprite);
 private:
 	void updateFrame();
 

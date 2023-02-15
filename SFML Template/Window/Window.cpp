@@ -78,8 +78,8 @@ void Window::updateSFMLEvents()
 				switch (event.key.code)
 				{
 				case sf::Keyboard::Escape:
-						window->close();
-						break;
+					window->close();
+					break;
 				}
 				break;
 		}
