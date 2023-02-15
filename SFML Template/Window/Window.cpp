@@ -56,7 +56,10 @@ void Window::render()
 
 void Window::update()
 {
-	animation.update(shape);
+	std::cout << animation.getCurrentFrame() << " - " << animation.getFrameCount() << std::endl;
+	if (animation.getCurrentFrame() < animation.getFrameCount()-1)
+		animation.update(shape);
+
 	spriteAnimation.update(tile);
 }
 
