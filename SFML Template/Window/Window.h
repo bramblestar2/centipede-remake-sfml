@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "../Handlers/TextureHandler.h"
 #include "../Handlers/AudioHandler.h"
+#include "../Handlers/AnimationHandler.h"
 #include "../Animated.h"
 #include "../SpriteSheetAnimation.h"
 
@@ -26,7 +27,7 @@ private:
 	sf::RenderWindow* window;
 	sf::Event event;
 
-	Animated animation;
+	Animated animation, animationTwo;
 	sf::RectangleShape shape;
 
 	SpriteSheetAnimation spriteAnimation;

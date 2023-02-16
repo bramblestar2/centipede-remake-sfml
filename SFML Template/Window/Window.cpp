@@ -8,21 +8,28 @@ Window::Window()
 	TextureHandler::load("grass", "grass.png");
 	TextureHandler::load("items", "spritesheets/bomberman_items.png");
 
-	//Load audio
+	//Load animations
+	AnimationHandler::load("protogen", "dance", "animation", "frame (#).png", 1, 59);
+
+	//Load audios
 	AudioHandler::load("sound", "test.wav");
 
-	animation.setup("animation/", "frame (#).png", 1, 59, sf::seconds(0.05));
+	animation.setup(AnimationHandler::get("protogen", "dance"), 1, 59, sf::seconds(0.05));
 	shape.setSize(sf::Vector2f(125, 150));
 
-	spriteAnimation.setup(TextureHandler::get("items"), sf::seconds(0.1), 0, 5);
-	spriteAnimation.addFrame(sf::IntRect(16 * 0, 16 * 2, 16, 16));
-	spriteAnimation.addFrame(sf::IntRect(16 * 1, 16 * 2, 16, 16));
-	spriteAnimation.addFrame(sf::IntRect(16 * 2, 16 * 2, 16, 16));
-	spriteAnimation.addFrame(sf::IntRect(16 * 3, 16 * 2, 16, 16));
-	spriteAnimation.addFrame(sf::IntRect(16 * 4, 16 * 2, 16, 16));
-	spriteAnimation.addFrame(sf::IntRect(16 * 5, 16 * 2, 16, 16));
-	tile.setSize(sf::Vector2f(100,100));
-	tile.setPosition(100,100);
+	animationTwo.setup(AnimationHandler::get("protogen", "dance"), 1, 59, sf::seconds(0.05));
+	animationTwo.setFrame(30);
+	tile.setSize(sf::Vector2f(125, 150));
+	tile.setPosition(300 - 125, 0);
+	//spriteAnimation.setup(TextureHandler::get("items"), sf::seconds(0.1), 0, 5);
+	//spriteAnimation.addFrame(sf::IntRect(16 * 0, 16 * 2, 16, 16));
+	//spriteAnimation.addFrame(sf::IntRect(16 * 1, 16 * 2, 16, 16));
+	//spriteAnimation.addFrame(sf::IntRect(16 * 2, 16 * 2, 16, 16));
+	//spriteAnimation.addFrame(sf::IntRect(16 * 3, 16 * 2, 16, 16));
+	//spriteAnimation.addFrame(sf::IntRect(16 * 4, 16 * 2, 16, 16));
+	//spriteAnimation.addFrame(sf::IntRect(16 * 5, 16 * 2, 16, 16));
+	//tile.setSize(sf::Vector2f(100,100));
+	//tile.setPosition(100,100);
 }
 
 Window::~Window()
@@ -31,6 +38,7 @@ Window::~Window()
 
 	TextureHandler::freeAll();
 	AudioHandler::freeAll();
+	AnimationHandler::freeAll();
 }
 
 void Window::run()
@@ -50,17 +58,15 @@ void Window::render()
 
 	window->draw(shape);
 	window->draw(tile);
-	
+
 	window->display();
 }
 
 void Window::update()
 {
-	//std::cout << animation.getCurrentFrame() << " - " << animation.getFrameCount() << std::endl;
-	//if (animation.getCurrentFrame() < animation.getFrameCount()-1)
-		animation.update(shape);
-
-	spriteAnimation.update(tile);
+	animation.update(shape);
+	animationTwo.update(tile);
+	//spriteAnimation.update(tile);
 }
 
 void Window::updateDt()
