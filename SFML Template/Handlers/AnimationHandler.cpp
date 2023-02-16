@@ -7,6 +7,7 @@ void AnimationHandler::load(const std::string type,
 							const std::string animation_path, 
 							const std::string file_formats)
 {
+	//Load frames
 }
 
 std::vector<sf::Texture*>* AnimationHandler::get(const std::string type, 
@@ -43,4 +44,17 @@ void AnimationHandler::freeAll()
 				delete textures.second.at(0);
 		}
 	}
+}
+
+std::string AnimationHandler::formatToString(const std::string format, const int frame)
+{
+	std::string string_frame = format;
+	size_t found = string_frame.find_last_of('#');
+
+	if (found != std::string::npos)
+		string_frame = string_frame.replace(found, 1, std::to_string(frame));
+	else
+		string_frame = "null";
+
+	return string_frame;
 }

@@ -14,7 +14,7 @@ public:
 	static void freeAll();
 
 private:
-	static std::string formatToString(const std::string format);
+	static std::string formatToString(const std::string format, const int frame);
 
 	//			Type		Animation Type			PNG's
 	static std::map<std::string, std::map<std::string, std::vector<sf::Texture*>>> m_animations;
