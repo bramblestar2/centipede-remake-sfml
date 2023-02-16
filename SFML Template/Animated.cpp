@@ -1,8 +1,17 @@
 #include "Animated.h"
 #include <iostream>
 
+Animated::~Animated()
+{
+    //while (m_frames.size() > 0)
+    //{
+    //    delete m_frames.at(0);
+    //    m_frames.erase(m_frames.begin());
+    //}
+}
+
 void Animated::setup(std::vector<sf::Texture*>* frames,
-    const int start_frames, const int end_frames, const std::chrono::duration<double> frame_time)
+    const int start_frames, const int end_frames, const sf::Time frame_time)
 {
     m_frame_time = frame_time;
 
@@ -70,7 +79,7 @@ void Animated::updateFrame()
 {
     if (m_max_frames > 0)
     {
-        //sf::Time time = m_frame_clock.getElapsedTime();
+        sf::Time time = m_frame_clock.getElapsedTime();
 
         if (time > m_frame_time)
         {
