@@ -1,7 +1,7 @@
 #pragma once
 #include "../Animated.h"
 #include <vector>
-class AnimationHandler// : public Handler<std::string, std::map<std::string, std::vector<sf::Texture*>>>
+class AnimationHandler
 {
 public:
 	static void load(const std::string type, 

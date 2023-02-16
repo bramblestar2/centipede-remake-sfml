@@ -7,6 +7,7 @@ Window::Window()
 	//Load textures
 	TextureHandler::load("grass", "grass.png");
 	TextureHandler::load("items", "spritesheets/bomberman_items.png");
+	TextureHandler::load("centipede", "spritesheets/centipede_sprite_sheet.png");
 
 	//Load animations
 	AnimationHandler::load("protogen", "dance", "animation", "frame (#).png", 1, 59);

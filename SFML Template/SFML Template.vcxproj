@@ -141,9 +141,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animated.cpp" />
+    <ClCompile Include="Dynamics\Entity.cpp" />
+    <ClCompile Include="Dynamics\Player.cpp" />
     <ClCompile Include="Handlers\AnimationHandler.cpp" />
     <ClCompile Include="Handlers\AudioHandler.cpp" />
-    <ClCompile Include="Dynamic.cpp" />
+    <ClCompile Include="Dynamics\Dynamic.cpp" />
     <ClCompile Include="Handlers\DynamicHandler.cpp" />
     <ClCompile Include="Handlers\FontHandler.cpp" />
     <ClCompile Include="Handlers\GlobalColors.cpp" />
@@ -155,9 +157,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animated.h" />
+    <ClInclude Include="Dynamics\Entity.h" />
+    <ClInclude Include="Dynamics\Player.h" />
     <ClInclude Include="Handlers\AnimationHandler.h" />
     <ClInclude Include="Handlers\AudioHandler.h" />
-    <ClInclude Include="Dynamic.h" />
+    <ClInclude Include="Dynamics\Dynamic.h" />
     <ClInclude Include="Handlers\DynamicHandler.h" />
     <ClInclude Include="Handlers\FontHandler.h" />
     <ClInclude Include="Handlers\GlobalColors.h" />

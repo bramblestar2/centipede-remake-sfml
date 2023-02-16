@@ -33,7 +33,7 @@
     <ClCompile Include="Handlers\DynamicHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Dynamic.cpp">
+    <ClCompile Include="Dynamics\Dynamic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Handlers\AudioHandler.cpp">
@@ -49,6 +49,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteSheetAnimation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dynamics\Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dynamics\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,7 +80,7 @@
     <ClInclude Include="Handlers\DynamicHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Dynamic.h">
+    <ClInclude Include="Dynamics\Dynamic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Handlers\AudioHandler.h">
@@ -84,6 +90,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteSheetAnimation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dynamics\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dynamics\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
