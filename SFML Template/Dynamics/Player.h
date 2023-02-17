@@ -9,6 +9,7 @@ class Player : public Entity
 public:
 	Player(const sf::Vector2f& position);
 
+
 private:
 };
 
