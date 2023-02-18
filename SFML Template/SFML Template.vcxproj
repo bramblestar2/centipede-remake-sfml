@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animated.cpp" />
+    <ClCompile Include="Dynamics\Collision.cpp" />
     <ClCompile Include="Dynamics\Entity.cpp" />
     <ClCompile Include="Dynamics\Player.cpp" />
     <ClCompile Include="Handlers\AnimationHandler.cpp" />
@@ -157,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animated.h" />
+    <ClInclude Include="Dynamics\Collision.h" />
     <ClInclude Include="Dynamics\Entity.h" />
     <ClInclude Include="Dynamics\Player.h" />
     <ClInclude Include="Handlers\AnimationHandler.h" />

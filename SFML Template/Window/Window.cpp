@@ -57,8 +57,8 @@ void Window::render()
 {
 	window->clear();
 
-	window->draw(shape);
-	window->draw(tile);
+	//window->draw(shape);
+	//window->draw(tile);
 
 	window->display();
 }
