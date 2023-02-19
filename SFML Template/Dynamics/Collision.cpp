@@ -123,6 +123,7 @@ bool Collision::collisionPositionVelocity(const sf::FloatRect& collision_rect, s
 
 		return true;
 	}
+
 	return false;
 }
 
