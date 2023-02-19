@@ -73,6 +73,56 @@ bool Collision::collisionVelocity(const sf::FloatRect& collision_rect, sf::Vecto
 
 bool Collision::collisionPositionVelocity(const sf::FloatRect& collision_rect, sf::Vector2f& position, sf::Vector2f& velocity)
 {
+	if (collision(collision_rect))
+	{
+		sf::FloatRect rect = m_collision_box.getGlobalBounds();
+
+		float r_left = rect.left;
+		float r_right = rect.left + rect.width;
+		float r_top = rect.top;
+		float r_bottom = rect.top + rect.height;
+
+		float left = collision_rect.left;
+		float right = collision_rect.left + collision_rect.width;
+		float top = collision_rect.top;
+		float bottom = collision_rect.top + collision_rect.height;
+
+		/*
+		*		Top
+		*		-------
+		*		|	  |
+		*	Left|	  |Right
+		*		|	  |
+		*		-------
+		*		Bottom
+		*/
+
+		//check if collision_rect is to the left of m_collision_box
+		if (left > r_left)
+		{
+			velocity.x = 0;
+		}
+
+		//check if collision_rect is to the right of m_collision_box
+		else if (right < r_right)
+		{
+			velocity.x = 0;
+		}
+
+		//check if collision_rect is to the top of m_collision_box
+		if (top > r_top)
+		{
+			velocity.y = 0;
+		}
+
+		//check if collision_rect is to the bottom of m_collision_box
+		else if (bottom > r_bottom)
+		{
+			velocity.y = 0;
+		}
+
+		return true;
+	}
 	return false;
 }
 
